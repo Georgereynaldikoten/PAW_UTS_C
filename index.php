@@ -41,9 +41,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item"  data-bs-toggle="modal" 
-                            href="#exampleModalToggle" >Pick Up</a></li>
+                            href="#exampleModalToggle" >My Order</a></li>
                             <li><a class="dropdown-item" data-bs-toggle="modal" 
-                            href="#exampleModalToggle" >Drop-off</a></li>
+                            href="#exampleModalToggle" >New Order</a></li>
 
                         </ul>
                     </li>

@@ -76,17 +76,16 @@
         </thead>
         <tbody>
         <?php
-          
            $userTemp = $_SESSION['user']['id'];
-           $query = mysqli_query($con, "SELECT * FROM neworder WHERE id = '$userTemp'") or die(mysqli_error($con));
+           $query = mysqli_query($con, "SELECT * FROM neworder WHERE id_user = '$userTemp'") or die(mysqli_error($con));
             if (mysqli_num_rows($query) == 0) {
-            echo '<tr> <td colspan="7"> ~Belum ada data~ </td> </tr>';
+            echo '<tr> <td colspan="9" class="text-center"> ~Belum ada data~ </td> </tr>';
             }else{
                 $no = 1;
                 while($data = mysqli_fetch_assoc($query)){
                 echo'
                 <tr>
-                    <th scope="row">'.$no.'</th>
+                    <th scope="row" class="text-center">'.$no.'</th>
                     <td>'.$data['sender'].'</td>
                     <td>'.$data['recipient'].'</td>
                     <td>'.$data['ordertype'].'</td>
@@ -94,7 +93,7 @@
                     <td>'.$data['dropadd'].'</td>
                     <td>'.$data['itemType'].'</td>
                     <td>'.$data['service'].'</td>
-                    <td>
+                    <td class="text-center">
                     <a href="./editOrder_Page.php?id='.$data['id'].'"><i style="color: green" class="fa fa-edit"></i></a>
                     <a href="../process/deleteOrder_Process.php?id='.$data['id'].'"
                     onClick="return confirm ( \'Yakin?\')">

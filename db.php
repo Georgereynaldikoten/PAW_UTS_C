@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost:4306";
-$user = "root";
-$pass = "";
-$name = "expressmas";
+$host = "sql105.epizy.com";
+$user = "epiz_30071835";
+$pass = "e6TSZcqYteKDnN";
+$name = "epiz_30071835_expressmas";
 
 $con = mysqli_connect($host,$user,$pass,$name);
 

@@ -40,7 +40,7 @@
             ('$sender', '$origin', '$sender_phone','$senderpost', '$senderadd',
             '$recipient', '$destination', '$phone_recipt','$post_recipt', '$dropaddress', 
             '$item_name', '$item_type', '$service', '$quantity', '$weight', '$height', '$width', 
-            '$length', '$note', '$ordertype', (SELECT id_user from neworder WHERE id_user='$userTemp'))")
+            '$length', '$note', '$ordertype', (SELECT id from users WHERE id='$userTemp'))")
                 or die(mysqli_error($con)); // perintah mysql yang gagal dijalankan ditangani oleh perintah “or die”
 
                 if($query){

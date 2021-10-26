@@ -3,6 +3,8 @@
     // $_POST itu method di formnya
     if(isset($_POST['update'])){
         // untuk mengoneksikan dengan database dengan memanggil file db.php
+        session_start();
+        if ($_SESSION['isLogin']) 
         include('../db.php');
         // tampung nilai yang ada di from ke variabel
         // sesuaikan variabel name yang ada di registerPage.php disetiap input
@@ -29,10 +31,11 @@
         $ordertype = $_POST['ordertype'];
 
         // Melakukan perubahan data ke databse
+        $userTemp = $_SESSION['user']['id'];
         $sql = "UPDATE neworder SET sender='$sender', origincity='$origin', senderphone='$sender_phone', senderpost='$senderpost', senderadd='$senderadd',
         recipient='$recipient', destinationcity='$destination', reciptphone='$phone_recipt', reciptpost='$post_recipt', dropadd='$dropaddress',
         itemName='$item_name', itemType='$item_type', service='$service', quantity='$quantity', weight='$weight', height='$height', width='$width', length='$length', notes='$note', ordertype='$ordertype'
-        WHERE id=$id";
+        WHERE id_user=$userTemp";
         if ($con->query($sql) === TRUE) {
             echo
                 '<script>
